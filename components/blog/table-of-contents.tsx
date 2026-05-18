@@ -27,7 +27,7 @@ export function TableOfContents({ headings }: { headings: Heading[] }) {
   if (headings.length === 0) return null
 
   return (
-    <nav className="sticky top-24 hidden lg:block w-52 shrink-0">
+    <nav className="sticky top-24 self-start hidden lg:block w-52 shrink-0">
       <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
         On this page
       </p>
