@@ -14,7 +14,7 @@ export function Navbar() {
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="font-mono text-sm font-semibold tracking-tight hover:opacity-70 transition-opacity"
+          className="font-mono text-base font-semibold tracking-tight hover:opacity-70 transition-opacity"
         >
           {siteConfig.name}
           <span className="text-muted-foreground">.</span>
@@ -25,7 +25,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="px-3 py-1.5 rounded-md text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+              className="px-3 py-1.5 rounded-md text-base text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
             >
               {link.label}
             </Link>

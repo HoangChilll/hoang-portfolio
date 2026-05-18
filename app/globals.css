@@ -194,3 +194,21 @@
     opacity: 0;
   }
 }
+
+/* Dino runner */
+@keyframes dino-move {
+  0%   { transform: translateX(-60px) scaleX(1); }
+  48%  { transform: translateX(calc(100vw + 60px)) scaleX(1); }
+  50%  { transform: translateX(calc(100vw + 60px)) scaleX(-1); }
+  98%  { transform: translateX(-60px) scaleX(-1); }
+  100% { transform: translateX(-60px) scaleX(1); }
+}
+@keyframes dino-hop {
+  0%, 100% { margin-bottom: 0px; }
+  50%       { margin-bottom: 6px; }
+}
+.dino-runner {
+  animation:
+    dino-move 12s linear infinite,
+    dino-hop 0.28s ease-in-out infinite;
+}
