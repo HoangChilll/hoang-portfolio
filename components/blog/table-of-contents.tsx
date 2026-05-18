@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState, useRef, useCallback } from "react"
+import { Download } from "lucide-react"
 import type { Heading } from "@/lib/markdown"
 
 const MIN_WIDTH = 160
@@ -73,9 +74,19 @@ export function TableOfContents({ headings }: { headings: Heading[] }) {
         title="Kéo để thay đổi độ rộng"
       />
 
-      <p className="px-4 pt-5 pb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground shrink-0">
-        On this page
-      </p>
+      <div className="px-4 pt-5 pb-3 flex items-center justify-between shrink-0">
+        <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          On this page
+        </p>
+        <button
+          onClick={() => window.print()}
+          title="Tải PDF"
+          className="flex items-center gap-1 rounded-md px-2 py-1 text-xs text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+        >
+          <Download className="size-3.5" />
+          PDF
+        </button>
+      </div>
       <ul className="flex-1 overflow-y-auto border-l border-border ml-4 pb-6">
         {headings.map(({ id, text, level }) => (
           <li key={id}>

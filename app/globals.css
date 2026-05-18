@@ -188,6 +188,37 @@
 .prose hr    { @apply my-8 border-border; }
 .prose img   { @apply my-6 w-full rounded-xl; }
 
+/* ── Print / PDF export ───────────────────────────── */
+@media print {
+  header, footer, nav,
+  [data-noprint],
+  .scroll-progress,
+  .click-star-effect {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+  }
+  .prose {
+    max-width: 100% !important;
+    color: black !important;
+  }
+  .prose p, .prose li {
+    color: #333 !important;
+  }
+  .prose img {
+    max-width: 100%;
+    break-inside: avoid;
+  }
+  .prose h1, .prose h2, .prose h3 {
+    break-after: avoid;
+    color: black !important;
+  }
+  a { color: black !important; text-decoration: none; }
+}
+
 @keyframes click-star-fly {
   to {
     transform: translate(var(--star-tx), var(--star-ty)) rotate(var(--star-rot)) scale(0);
