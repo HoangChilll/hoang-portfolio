@@ -64,8 +64,8 @@
   --secondary-foreground: oklch(0.2 0 0);
   /* Slightly darker muted so alternating sections are distinguishable */
   --muted: oklch(0.963 0 0);
-  /* Softer secondary text — closer to #6b7280 */
-  --muted-foreground: oklch(0.47 0 0);
+  /* Dark blue in light mode instead of gray */
+  --muted-foreground: oklch(0.35 0.13 255);
   --accent: oklch(0.963 0 0);
   --accent-foreground: oklch(0.2 0 0);
   --destructive: oklch(0.577 0.245 27.325);

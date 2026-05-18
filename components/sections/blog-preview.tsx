@@ -27,19 +27,19 @@ export function BlogPreview() {
           </Link>
         </div>
 
-        <div className="divide-y divide-border">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group flex flex-col gap-2 py-5 sm:flex-row sm:items-start sm:justify-between sm:gap-8 hover:opacity-80 transition-opacity"
+              className="group flex flex-col gap-3 rounded-xl border border-border bg-card p-5 transition-shadow hover:shadow-card-hover"
             >
               <div className="flex-1">
-                <h3 className="mb-1 font-medium group-hover:underline underline-offset-4">
+                <h3 className="mb-2 font-medium leading-snug group-hover:underline underline-offset-4">
                   {post.title}
                 </h3>
                 {post.description && (
-                  <p className="text-sm text-muted-foreground line-clamp-1">
+                  <p className="text-sm text-muted-foreground line-clamp-2">
                     {post.description}
                   </p>
                 )}
@@ -56,7 +56,7 @@ export function BlogPreview() {
               </div>
               <time
                 dateTime={post.date}
-                className="shrink-0 font-mono text-xs text-muted-foreground sm:pt-0.5"
+                className="font-mono text-xs text-muted-foreground"
               >
                 {formatDate(post.date)}
               </time>
