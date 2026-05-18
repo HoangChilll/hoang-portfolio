@@ -96,6 +96,64 @@ description: Tổng quan về OS, cung cấp các khái niệm tổng quan nhấ
     + `Mạng cục bộ`
     + `dịch vụ tính toán lưu trữ`
     + Vấn đề độ trễ truyền thông,virus (`love letter virus` 05/2000),..
-     + hơn 45m máy bị nhiễm
-     + ăn cắp thông tin 
+    + hơn 45m máy bị nhiễm
+    + ăn cắp thông tin 
 ![OS](/images/OS9.png)
+  - 95-_:
+    + Thiết bị di động trở nên phổ biến
+    + Mạng diện rộng, mạng không dây
+    + Hệ thống ngang hàng 
+    + Điện toán đám mây
+# Định nghĩa và phân loại hệ điều hành
+## Định nghĩa
+  - Người sử dụng : Hệ điều hành là `hệ thống chương trình` phục vụ `khai thác` hệ thống tính toán một cách `thuận lợi`
+  - Người quản lý : Hệ điều hành là hệ thống chương trình phục vụ `quản lý` chặt
+chẽ và sử dụng tối ưu các `tài nguyên` của hệ thống tính toán
+  - Quan điểm kỹ thuật : Hệ điều hành là một hệ thống chương trình trang bị cho một máy tính cụ thể để tạo ra một `máy tính logic` mới với `tài nguyên mới` và `khả năng mới`
+  - Quan điểm hệ thống : Hệ điều hành là một hệ thống `mô hình hoá`, mô phỏng hoạt động của `máy tính`, của `người sử dụng` và của các `thao tác viên`, hoạt động trong `chế độ đối thoại` nhằm tạo môi trường `khai thác thuận lợi` hệ thống máy tính và `quản lý tối ưu tài nguyên` của hệ thống.
+
+## Phân loại 
+  - **Hệ thống xử lý theo lô đơn chương trình**
+    + Thực hiện các chương trình (Job) `lần lượt` theo những chỉ thị đã được `xác định` trước.
+    + Khi 1 Job kết thúc, hệ thống `tự động thực hiện Job tiếp theo` mà không cần sự can thiệp từ bên ngoài
+    + Phải tồn tại `bộ giám sát` thực hiện dãy các Job và bộ giám sát phải thường trú trong hệ thống
+    + Đòi hỏi `tổ chức hàng đợi công việc` (Job queue)
+    + Vấn đề: khi chương trình `truy nhập thiết bị vào/ra`; processor rơi vào `trạng thái chờ đợi`
+![OS](/images/OS10.png)
+  - **Hệ thống xử lý theo lô đa chương trình**
+    + Cho phép thực hiện `nhiều chương trình đồng thời`
+      + Nạp `một phần mã và dữ liệu` của các chương trình/tiến trình vào bộ nhớ (`phần còn lại` sẽ được nạp tại `thời điểm thích hợp`).=>Chương trình sẵn sàng được thực hiện
+      + `Thực hiện chương trìn`h như hệ thống `đơn chương trình`
+      + Nếu chương trình `thực hiện vào ra`, processor được `chuyển giao` cho chương trình đang `sẵn sàng khác`
+    + Ưu điểm 
+      + `Tiết kiệm` bộ nhớ 
+      + Hạn chế `thời gian rỗi` của processor
+    + Nhược điểm 
+      + `Chi phí cao` cho điều phối processor ➔Chương trình nào tiếp theo sẽ được sử dụng processor?
+      + Giải quyết vấn đề `chia sẻ bộ nhớ` giữa các chương trình ?
+![OS](/images/OS11.png)
+  - **Hệ thống phân chia thời gian**
+    + `Chia sẻ thời gian` của processor cho các chương trình/tiến trình đang sẵn sàng thực hiện  
+    + Nguyên tắc giống như hệ thống xử lý theo lô đa chương trình (`nạp một phần` của các chương trình)
+    + Processor được `phân phối lại` phụ thuộc chủ yếu vào `sự điều phối` của HĐH
+    + `Thời gian hoán đổi` giữa các tiến trình `nhỏ`, các chương trình cảm giác `song song`
+    + Thường được gọi: `HĐH đa nhiệm` (Windows)
+  - **Hệ thống chia sẻ thời gian**
+![OS](/images/OS12.png)
+![OS](/images/OS13.png)
+  - **Hệ thống song song**
+    + Xây dựng cho các `hệ thống` có `nhiều bộ vi xử lý`
+      + Nhiều VXL, công việc `thực hiện nhanh` chóng hơn
+      + `Độ tin cậy cao`: hỏng một VXL không ảnh hưởng đến hệ thống
+      + Ưu thế hơn hệ thống nhiều máy có một VXL vì cùng `chia sẻ bộ nhớ, thiết bị ngoại vi`...
+    + Đa xử lý đối xứng (SMP: symmetric)
+      + Mỗi bộ xử lý chạy 1 tiến trình/tiểu trình
+      + Các `VXL giao tiếp` với nhau thông qua `1 bộ nhớ dùng chung`
+      + Cơ chế chịu lỗi và khả năng cân bằng tải tối ưu
+      + Vấn đề: Đồng bộ giữa các VXL
+      + Ví dụ: HĐH WinNT
+    + Đa xử lý không đối xứng (ASMP: asymmetric)
+      + 1 `bộ xử lý chính` kiểm soát toàn bộ hệ thống
+      + Các bộ xử lý khác thực hiện theo lệnh của bộ xử lý chính hoặc theo những chỉ thị đã được định nghĩa trước
+      + Mô hình này theo dạng `quan hệ chủ tớ`:Bộ xử lý chính sẽ lập lịch cho các bộ xử lý khác
+      + VD: IBM System/360

@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react"
 import { getAllPosts, getPostBySlug } from "@/lib/blog"
 import { markdownToHtml, extractHeadings } from "@/lib/markdown"
 import { TableOfContents } from "@/components/blog/table-of-contents"
+import { BlogLayout } from "@/components/blog/blog-layout"
 
 export function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }))
@@ -44,18 +45,17 @@ export default async function BlogPostPage({
   ])
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
-      <Link
-        href="/blog"
-        className="mb-10 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-      >
-        <ArrowLeft className="size-4" />
-        All posts
-      </Link>
+    <>
+      <BlogLayout>
+        <Link
+          href="/blog"
+          className="mb-10 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <ArrowLeft className="size-4" />
+          All posts
+        </Link>
 
-      <div className="flex gap-16">
-        {/* Main content */}
-        <article className="min-w-0 flex-1">
+        <article>
           <header className="mb-10">
             <div className="mb-4 flex flex-wrap gap-1.5">
               {post.tags.map((tag) => (
@@ -83,10 +83,9 @@ export default async function BlogPostPage({
             dangerouslySetInnerHTML={{ __html: contentHtml }}
           />
         </article>
+      </BlogLayout>
 
-        {/* Quick nav */}
-        <TableOfContents headings={headings} />
-      </div>
-    </div>
+      <TableOfContents headings={headings} />
+    </>
   )
 }

@@ -8,7 +8,10 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
       "Bash(git -C /c/Users/PC/Downloads/hoang-portfolio status)",
       "Bash(git -C /c/Users/PC/Downloads/hoang-portfolio log --oneline -3)",
-      "Bash(git *)"
+      "Bash(git *)",
+      "Bash(Copy-Item \"C:\\\\Users\\\\PC\\\\Downloads\\\\hoang-portfolio\\\\content\\\\posts\\\\OS1.png\" \"C:\\\\Users\\\\PC\\\\Downloads\\\\hoang-portfolio\\\\public\\\\OS1.png\")",
+      "Bash(Copy-Item \"C:\\\\Users\\\\PC\\\\Downloads\\\\hoang-portfolio\\\\content\\\\posts\\\\OS2.png\" \"C:\\\\Users\\\\PC\\\\Downloads\\\\hoang-portfolio\\\\public\\\\OS2.png\")",
+      "Bash(Copy-Item \"C:\\\\Users\\\\PC\\\\Downloads\\\\hoang-portfolio\\\\content\\\\posts\\\\OS3.png\" \"C:\\\\Users\\\\PC\\\\Downloads\\\\hoang-portfolio\\\\public\\\\OS3.png\")"
     ]
   }
 }

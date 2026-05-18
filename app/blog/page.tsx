@@ -15,20 +15,74 @@ function formatDate(dateStr: string) {
   })
 }
 
-export default function BlogPage() {
-  const posts = getAllPosts()
+export default function BlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ tag?: string }>
+}) {
+  const allPosts = getAllPosts()
+  const allTags = Array.from(new Set(allPosts.flatMap((p) => p.tags))).sort()
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
-      <div className="mb-12">
+      <div className="mb-10">
         <h1 className="mb-3 text-4xl font-bold tracking-tight">Blog</h1>
         <p className="text-base text-muted-foreground">
           Thoughts on software development, tools, and the web.
         </p>
       </div>
 
+      <TagFilter allTags={allTags} searchParams={searchParams} allPosts={allPosts} />
+    </div>
+  )
+}
+
+async function TagFilter({
+  allTags,
+  searchParams,
+  allPosts,
+}: {
+  allTags: string[]
+  searchParams: Promise<{ tag?: string }>
+  allPosts: ReturnType<typeof getAllPosts>
+}) {
+  const { tag: activeTag } = await searchParams
+  const posts = activeTag
+    ? allPosts.filter((p) => p.tags.includes(activeTag))
+    : allPosts
+
+  return (
+    <>
+      {/* Tag pills */}
+      <div className="mb-8 flex flex-wrap gap-2">
+        <Link
+          href="/blog"
+          className={`rounded-full px-3 py-1 text-sm transition-colors ${
+            !activeTag
+              ? "bg-foreground text-background"
+              : "bg-muted text-muted-foreground hover:text-foreground"
+          }`}
+        >
+          All
+        </Link>
+        {allTags.map((tag) => (
+          <Link
+            key={tag}
+            href={`/blog?tag=${encodeURIComponent(tag)}`}
+            className={`rounded-full px-3 py-1 text-sm transition-colors ${
+              activeTag === tag
+                ? "bg-foreground text-background"
+                : "bg-muted text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            {tag}
+          </Link>
+        ))}
+      </div>
+
+      {/* Posts grid */}
       {posts.length === 0 ? (
-        <p className="text-muted-foreground">No posts yet. Check back soon.</p>
+        <p className="text-muted-foreground">No posts found for this tag.</p>
       ) : (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
@@ -50,7 +104,11 @@ export default function BlogPage() {
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-md bg-muted px-2 py-0.5 text-xs text-muted-foreground"
+                      className={`rounded-md px-2 py-0.5 text-xs ${
+                        activeTag === tag
+                          ? "bg-foreground text-background"
+                          : "bg-muted text-muted-foreground"
+                      }`}
                     >
                       {tag}
                     </span>
@@ -67,6 +125,6 @@ export default function BlogPage() {
           ))}
         </div>
       )}
-    </div>
+    </>
   )
 }
