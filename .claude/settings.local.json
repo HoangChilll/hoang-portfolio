@@ -11,7 +11,11 @@
       "Bash(git *)",
       "Bash(Copy-Item \"C:\\\\Users\\\\PC\\\\Downloads\\\\hoang-portfolio\\\\content\\\\posts\\\\OS1.png\" \"C:\\\\Users\\\\PC\\\\Downloads\\\\hoang-portfolio\\\\public\\\\OS1.png\")",
       "Bash(Copy-Item \"C:\\\\Users\\\\PC\\\\Downloads\\\\hoang-portfolio\\\\content\\\\posts\\\\OS2.png\" \"C:\\\\Users\\\\PC\\\\Downloads\\\\hoang-portfolio\\\\public\\\\OS2.png\")",
-      "Bash(Copy-Item \"C:\\\\Users\\\\PC\\\\Downloads\\\\hoang-portfolio\\\\content\\\\posts\\\\OS3.png\" \"C:\\\\Users\\\\PC\\\\Downloads\\\\hoang-portfolio\\\\public\\\\OS3.png\")"
+      "Bash(Copy-Item \"C:\\\\Users\\\\PC\\\\Downloads\\\\hoang-portfolio\\\\content\\\\posts\\\\OS3.png\" \"C:\\\\Users\\\\PC\\\\Downloads\\\\hoang-portfolio\\\\public\\\\OS3.png\")",
+      "Bash(grep -c \"^\\\\`\\\\`\\\\`\" content/posts/KTLT.md)",
+      "Bash(*#\\\\- ].*{.*}\" content/posts/KTLT.md | head -20)",
+      "Bash(grep -n \"^[^|`*#\\\\- ].*{.*}\" content/posts/KTLT.md | head -20)",
+      "Bash(grep -c \"^\\\\`\\\\`\\\\`\" content/posts/session.md)"
     ]
   }
 }

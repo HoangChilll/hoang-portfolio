@@ -1,7 +1,7 @@
 ---
 title: Session
 date: 2026-05-17
-tags: [http, authen, security]
+tags: [http, authen, security,session]
 description: 1 phương thức xác thực phổ biến 
 ---
 # 1. Session là gì?
