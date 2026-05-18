@@ -10,12 +10,12 @@ description: Tổng quan về OS, cung cấp các khái niệm tổng quan nhấ
 ![OS](/OS2.png)
 - Một/ nhiều CPUs, các thiết bị điều khiển được liên kết bằng `1 hệ thống bus chung` để truy nhập tới bộ nhớ chia sẻ
 - Các thiết bị điều khiển và CPU thực hiện `đồng thời`, `cạnh tranh` với nhau
-**Các thành phần của một hệ thống tính toán**
+- **Các thành phần của một hệ thống tính toán**
 - `Phần cứng (Hardware)` : cung cấp `tài nguyên` tính toán cơ bản (CPU, bộ nhớ)
 - `Hệ điều hành (OS)` : `điều khiển` và `phối hợp` việc sử dụng phần cứng của các phần mềm 
 - Chương trình ứng dụng : sử dụng tài nguyên máy tính phục vụ người dùng 
 - Người dùng 
-**Vị trí và mục tiêu**
+- **Vị trí và mục tiêu**
 - Hệ điều hành nằm giữa phần cứng hệ thống và phần mềm 
 ![OS](/OS3.png)
 - Mục tiêu : 
@@ -93,9 +93,9 @@ description: Tổng quan về OS, cung cấp các khái niệm tổng quan nhấ
     + Giao diện người dùng theo đồ họa(MAC, WIN)
 ![OS](/images/OS8.png)
   - Gia đoạn phát triển của HDH mạng và HDH phân tán
-    + Mạng cục bộ
-    + dịch vụ tính toán lưu trữ
-    + Vấn đề độ trễ truyền thông,virus (love letter virus 05/2000),..
+    + `Mạng cục bộ`
+    + `dịch vụ tính toán lưu trữ`
+    + Vấn đề độ trễ truyền thông,virus (`love letter virus` 05/2000),..
      + hơn 45m máy bị nhiễm
      + ăn cắp thông tin 
 ![OS](/images/OS9.png)
