@@ -1,0 +1,4 @@
+- All API calls must be centralized
+- Use fetch wrapper (no raw fetch everywhere)
+- Handle errors globally
+- Never expose secrets in frontend

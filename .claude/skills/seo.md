@@ -1,0 +1,5 @@
+- Every page must have metadata (title, description)
+- Use OpenGraph tags
+- Optimize images (next/image)
+- Lazy load heavy components
+- Avoid unnecessary re-renders

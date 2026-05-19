@@ -1,0 +1,6 @@
+- Use Next.js App Router structure
+- Separate UI / logic / data layer
+- Prefer server components when possible
+- Keep components modular, reusable
+- Avoid business logic in UI components
+- Use services/ folder for API logic

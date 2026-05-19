@@ -1,0 +1,7 @@
+- Blog posts stored as Markdown or MDX
+- Each post must have: title, date, tags
+- Support tagging system
+- Render MDX safely
+- Slug-based routing (/blog/[slug])
+- Pagination required
+- SEO metadata required for each post

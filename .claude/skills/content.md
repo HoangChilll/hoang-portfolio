@@ -1,0 +1,4 @@
+- All content must be separated from UI
+- Use JSON / MD / CMS layer
+- No hardcoded text inside components
+- Support localization-ready structure (optional)

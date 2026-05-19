@@ -28,7 +28,7 @@ export function Background() {
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: `url(${backgroundImageUrl})`,
+          backgroundImage: "url('/images/aa.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
