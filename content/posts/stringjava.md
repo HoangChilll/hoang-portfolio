@@ -1,9 +1,4 @@
----
-title: Về String trong java
-date: 2026-05-20
-tags: [java]
-description: Các kiến thức căn bản nhất cần biết về java
----
+
 # 📘 Java String – Hướng Dẫn Toàn Diện
 
 ---
@@ -188,8 +183,7 @@ System.out.println("JAVA".equalsIgnoreCase("java"));   // true
 
 ### 4.4 Tóm tắt so sánh
 
-| | `==` | `.equals()` | `.equalsIgnoreCase()` |
-|---|---|---|---|
+| | `==`           | `.equals()` | `.equalsIgnoreCase()` |
 | So sánh | Địa chỉ | Nội dung | Nội dung (bỏ qua hoa/thường) |
 | Literal vs Literal | `true` | `true` | `true` |
 | Literal vs `new` | `false` | `true` | `true` |
