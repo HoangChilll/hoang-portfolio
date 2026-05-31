@@ -2,7 +2,7 @@
 title: JPA và vấn đề xoay quanh nó
 date: 2026-05-20
 tags: [spring, java,jpa]
-description: khái niệm các vấn đề xoay quanh jpa
+description: khái niệm các vấn đề xoay quanh jpa cơ bản 
 ---
 # JPA trong Spring — Toàn tập
 

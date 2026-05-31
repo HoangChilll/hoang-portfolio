@@ -23,13 +23,15 @@ Thay vì cài đặt ứng dụng trực tiếp lên máy chủ, Docker cho phé
 ###  Bài toán kinh điển: "Máy tôi chạy được mà!"
 
 Trước khi có Docker, các team phát triển thường gặp phải:
+```
+| Vấn đề                       | Mô tả |
 
-| Vấn đề | Mô tả |
-|--------|-------|
-| **Xung đột môi trường** | Code chạy tốt trên máy dev nhưng lỗi trên server production |
-| **Cài đặt phức tạp** | Mỗi developer phải tự setup môi trường, dễ sai sót |
-| **Khó scale** | Triển khai thêm instance mới tốn thời gian cấu hình |
-| **Lãng phí tài nguyên** | Dùng Virtual Machine (VM) quá nặng cho mỗi ứng dụng |
+| **Xung đột môi trường**      | Code chạy tốt trên máy dev nhưng lỗi trên server production |
+| **Cài đặt phức tạp**         | Mỗi developer phải tự setup môi trường, dễ sai sót          |
+| **Khó scale**                | Triển khai thêm instance mới tốn thời gian cấu hình         |
+| **Lãng phí tài nguyên**      | Dùng Virtual Machine (VM) quá nặng cho mỗi ứng dụng         |
+```
+
 
 ### Docker giải quyết bằng cách:
 
@@ -135,12 +137,12 @@ docker build -t my-app:1.0 .
 
 **Registry** là **kho lưu trữ và phân phối** Docker Images.
 
-| Registry | Mô tả |
-|----------|-------|
-| **Docker Hub** | Registry công khai mặc định, miễn phí cho public image |
-| **GitHub Container Registry** | Tích hợp với GitHub Actions |
-| **AWS ECR / GCR / ACR** | Registry riêng của các cloud provider |
-| **Self-hosted** | Tự dựng registry nội bộ (dùng `registry` image) |
+| Registry                      |  Mô tả                                                 |
+
+| **Docker Hub**                | Registry công khai mặc định, miễn phí cho public image |
+| **GitHub Container Registry** | Tích hợp với GitHub Actions                            |
+| **AWS ECR / GCR / ACR**       | Registry riêng của các cloud provider                  |
+| **Self-hosted**               | Tự dựng registry nội bộ (dùng `registry` image)        |
 
 ```bash
 # Đăng nhập Docker Hub
@@ -153,7 +155,7 @@ docker push username/my-app:1.0
 
 ---
 
-### 💾 4.5 Volume
+###  4.5 Volume
 
 **Volume** là cơ chế để **lưu trữ dữ liệu bền vững** (persistent data) bên ngoài container.
 
@@ -177,14 +179,14 @@ docker run -d -v /host/path:/container/path nginx
 ### 🌐 4.6 Network
 
 **Docker Network** cho phép các container **giao tiếp với nhau** và với thế giới bên ngoài.
+```
+| Loại Networ  | Mô tả                                                   |
 
-| Loại Network | Mô tả |
-|--------------|-------|
-| **bridge** | Mặc định; container trong cùng network có thể giao tiếp |
-| **host** | Container dùng thẳng network của host |
-| **none** | Container hoàn toàn bị cô lập |
-| **overlay** | Dùng cho Docker Swarm, kết nối nhiều host |
-
+| **bridge**   | Mặc định; container trong cùng network có thể giao tiếp |
+| **host**     | Container dùng thẳng network của host                   |
+| **none**     | Container hoàn toàn bị cô lập                           |
+| **overlay**  | Dùng cho Docker Swarm, kết nối nhiều host               |
+```
 ```bash
 # Tạo network tùy chỉnh
 docker network create my-network
@@ -249,13 +251,7 @@ Dockerfile  ──build──►  Image  ──run──►  Container (Running)
                           │             Container (Stopped)
                        Registry                │
                                            ──rm──► (Deleted)
-```
-
----
-
-## 6. Các lệnh Docker thường dùng
-
-```bash
+```bashnphnp
 # === IMAGE ===
 docker pull <image>           # Tải image
 docker build -t <name> .      # Build image từ Dockerfile
@@ -284,17 +280,17 @@ docker inspect <id>           # Xem thông tin chi tiết
 ---
 
 ## 7. Tóm tắt
+```
+| Khái niệm      | Vai trò                          |
 
-| Khái niệm | Vai trò |
-|-----------|---------|
-| **Image** | Bản thiết kế (read-only) |
-| **Container** | Phiên bản chạy từ Image |
-| **Dockerfile** | Script để build Image |
-| **Registry** | Kho lưu trữ và chia sẻ Image |
-| **Volume** | Lưu trữ dữ liệu bền vững |
-| **Network** | Kết nối giữa các container |
-| **Compose** | Quản lý nhiều container cùng lúc |
-
+| **Image**      | Bản thiết kế (read-only)         |
+| **Container**  | Phiên bản chạy từ Image          |
+| **Dockerfile** | Script để build Image            |
+| **Registry**   | Kho lưu trữ và chia sẻ Image     |
+| **Volume**     | Lưu trữ dữ liệu bền vững         |
+| **Network**    | Kết nối giữa các container       |
+| **Compose**    | Quản lý nhiều container cùng lúc |
+```
 ---
 
-> 💡 **Bước tiếp theo:** Sau khi nắm vững Docker cơ bản, hãy tìm hiểu **Docker Swarm** hoặc **Kubernetes (K8s)** để quản lý container ở quy mô lớn hơn trong môi trường production.
+>  **Bước tiếp theo:** Sau khi nắm vững Docker cơ bản, hãy tìm hiểu **Docker Swarm** hoặc **Kubernetes (K8s)** để quản lý container ở quy mô lớn hơn trong môi trường production.
