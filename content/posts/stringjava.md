@@ -1,8 +1,9 @@
-
-# 📘 Java String – Hướng Dẫn Toàn Diện
-
 ---
-
+title: String trong java
+date: 2026-04-17
+tags: [java, spring]
+description: Kiến thức căn bản, phổ biến về string trong java
+---
 ## 1. Bộ nhớ Stack và Heap
 
 ### Stack
