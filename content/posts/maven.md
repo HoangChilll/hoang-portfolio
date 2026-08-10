@@ -2,17 +2,12 @@
 title: Maven & Gradle Fundamentals
 date: 2026-08-06
 tags: [java, maven, gradle, build-tool, dependency]
-description: Kiến thức nền tảng về Maven và Gradle: Dependency, Repository, Lifecycle, Plugin.
+description: Kiến thức nền tảng về Maven và Gradle Dependency, Repository, Lifecycle, Plugin.
 ---
-
 # Maven & Gradle Fundamentals
-
 ## 1. Tại sao Maven/Gradle ra đời?
-
 Trước đây, khi phát triển Java, mỗi thư viện đều phải tải thủ công dưới dạng `.jar`, sau đó thêm vào project.
-
 Ví dụ:
-
 ```
 lib/
     spring.jar
@@ -20,9 +15,7 @@ lib/
     junit.jar
     lombok.jar
 ```
-
 Nhược điểm:
-
 - Phải tự tải từng thư viện.
 - Dễ thiếu dependency.
 - Khó nâng cấp phiên bản.
@@ -35,34 +28,23 @@ Hai Build Tool phổ biến nhất:
 - Maven
 - Gradle
 
-
-
 # Build Tool là gì?
-
 Build Tool là công cụ tự động hóa quá trình build project.
-
 Thay vì tự làm từng bước:
-
 - Download thư viện
 - Compile
 - Chạy test
 - Đóng gói
 - Triển khai
-
 chỉ cần chạy một lệnh:
-
 ```bash
 mvn package
 ```
-
 hoặc
-
 ```bash
 ./gradlew build
 ```
-
 Build Tool sẽ tự thực hiện toàn bộ quy trình.
-
 
 # Dependency
 
