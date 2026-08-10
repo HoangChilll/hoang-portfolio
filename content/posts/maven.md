@@ -35,7 +35,7 @@ Hai Build Tool phổ biến nhất:
 - Maven
 - Gradle
 
----
+
 
 # Build Tool là gì?
 
@@ -63,7 +63,6 @@ hoặc
 
 Build Tool sẽ tự thực hiện toàn bộ quy trình.
 
----
 
 # Dependency
 
@@ -120,7 +119,7 @@ Trong Maven:
 
 Maven sẽ tự tải thư viện.
 
----
+
 
 ## groupId
 
@@ -136,7 +135,7 @@ com.google
 org.apache
 ```
 
----
+
 
 ## artifactId
 
@@ -152,7 +151,7 @@ spring-security
 spring-data-jpa
 ```
 
----
+
 
 ## version
 
@@ -164,7 +163,7 @@ Ví dụ:
 3.5.0
 ```
 
----
+
 
 # Transitive Dependency
 
@@ -206,7 +205,6 @@ Maven vẫn tự tải toàn bộ thư viện phụ thuộc.
 
 Đây gọi là **Transitive Dependency**.
 
----
 
 # Repository
 
@@ -226,7 +224,7 @@ mysql-connector.jar
 lombok.jar
 ```
 
----
+
 
 ## Local Repository
 
@@ -280,7 +278,6 @@ Dùng luôn
 
 Không cần tải lại.
 
----
 
 ## Remote Repository
 
@@ -294,7 +291,7 @@ Chứa hàng triệu thư viện Java.
 
 Nếu Local Repository chưa có dependency thì Maven sẽ tải từ Remote Repository.
 
----
+
 
 ## Repository nội bộ công ty
 
@@ -321,7 +318,7 @@ Maven Central
 
 Nhờ đó các project trong công ty có thể dùng chung thư viện.
 
----
+
 
 # Lifecycle
 
@@ -355,7 +352,6 @@ deploy
 
 Mỗi phase đều có một nhiệm vụ riêng.
 
----
 
 ## validate
 
@@ -368,7 +364,6 @@ Ví dụ:
 
 Nếu lỗi, Maven dừng ngay.
 
----
 
 ## compile
 
@@ -384,7 +379,6 @@ Biên dịch mã nguồn.
 
 Thực chất Maven gọi trình biên dịch Java (`javac`).
 
----
 
 ## test
 
@@ -392,7 +386,7 @@ Chạy Unit Test.
 
 Nếu test thất bại, Maven sẽ dừng quá trình build.
 
----
+
 
 ## package
 
@@ -416,7 +410,7 @@ hoặc
 
 Đây là sản phẩm có thể chạy hoặc phát hành.
 
----
+
 
 ## install
 
@@ -440,7 +434,6 @@ myapp.jar
 
 Nhờ đó các project khác trên cùng máy có thể sử dụng.
 
----
 
 ## deploy
 
@@ -453,7 +446,6 @@ Ví dụ:
 
 để các thành viên khác hoặc CI/CD có thể tải về.
 
----
 
 # Tính kế thừa của Lifecycle
 
@@ -519,7 +511,7 @@ mvn deploy
 
 Maven sẽ chạy toàn bộ Lifecycle.
 
----
+
 
 # Plugin
 
@@ -579,7 +571,7 @@ spring-boot-maven-plugin
 
 Lifecycle chỉ định **phải làm gì**, còn Plugin quyết định **làm bằng cách nào**.
 
----
+
 
 # Maven Build Flow
 
@@ -615,7 +607,7 @@ install
 deploy
 ```
 
----
+
 
 # Maven vs Gradle
 
@@ -626,7 +618,7 @@ deploy
 | Convention-based | Configurable hơn |
 | Chậm hơn ở project lớn | Nhanh hơn nhờ Incremental Build và Build Cache |
 
----
+
 
 # Tổng kết
 
@@ -640,7 +632,7 @@ Trả lời câu hỏi:
 - Remote Repository (Maven Central)
 - Company Repository (Nexus, Artifactory)
 
----
+
 
 ## Lifecycle
 
@@ -672,13 +664,12 @@ install
 deploy
 ```
 
----
+
 
 ## Dependency
 
 Thư viện mà project cần để hoạt động.
 
----
 
 ## Transitive Dependency
 
@@ -686,15 +677,13 @@ Dependency của dependency.
 
 Maven sẽ tự động tải toàn bộ.
 
----
+
 
 ## Plugin
 
 Thành phần thực hiện công việc trong từng phase của Lifecycle.
 
 Lifecycle định nghĩa **quy trình**, Plugin thực thi **quy trình**.
-
----
 
 ## Tổng kết
 

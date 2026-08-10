@@ -15,7 +15,6 @@ description: Kiến thức nền tảng về File I/O, BufferedReader/Writer, Ja
 - Đọc/Ghi các loại file như `.txt`, `.csv`, `.json`, `.xml`, hình ảnh,...
 - Là nền tảng cho logging, cấu hình, upload/download file,...
 
----
 
 # Kiến trúc File I/O
 
@@ -25,7 +24,6 @@ File <--> Java Program
 
 Java thực chất chỉ làm việc với **byte**, sau đó chuyển đổi thành ký tự nếu cần.
 
----
 
 # Byte Stream vs Character Stream
 
@@ -46,7 +44,7 @@ Làm việc trực tiếp với byte.
 - ZIP
 - File nhị phân
 
----
+
 
 ## Character Stream
 
@@ -65,7 +63,6 @@ Làm việc với ký tự Unicode.
 - HTML
 - JSON
 
----
 
 # BufferedReader / BufferedWriter
 
@@ -79,7 +76,7 @@ Giải pháp:
 - Chương trình thao tác trên Buffer trước.
 - Giảm số lần truy cập ổ cứng ⇒ tăng hiệu năng.
 
----
+
 
 ## BufferedReader
 
@@ -100,7 +97,7 @@ while ((line = br.readLine()) != null) {
 - Có `readLine()`
 - Phù hợp file văn bản
 
----
+
 
 ## BufferedWriter
 
@@ -123,7 +120,7 @@ bw.close();
 
 `close()` sẽ tự gọi `flush()` trước khi đóng.
 
----
+
 
 # Java NIO
 
@@ -136,7 +133,6 @@ bw.close();
 - Hỗ trợ xử lý nhiều kết nối đồng thời.
 - API hiện đại và linh hoạt hơn.
 
----
 
 ## Thành phần quan trọng
 
@@ -148,7 +144,6 @@ Thay thế `File`.
 Path path = Paths.get("students.csv");
 ```
 
----
 
 ### Files
 
@@ -161,8 +156,6 @@ Files.readAllLines(path);
 
 Files.writeString(path, "Hello");
 ```
-
----
 
 ### Channel & Buffer
 
@@ -184,7 +177,7 @@ Program
 - Hiệu năng cao.
 - Hỗ trợ Non-blocking I/O.
 
----
+
 
 # IO vs NIO
 
@@ -195,7 +188,6 @@ Program
 | Đơn giản | Hiệu năng cao hơn |
 | Phù hợp ứng dụng nhỏ | Phù hợp server lớn |
 
----
 
 # CSV (Comma-Separated Values)
 
@@ -209,7 +201,7 @@ id,name,age
 
 Mỗi dòng là một bản ghi, mỗi cột được phân tách bằng dấu `,`.
 
----
+
 
 # Khi nào dùng gì?
 
@@ -224,7 +216,7 @@ Mỗi dòng là một bản ghi, mỗi cột được phân tách bằng dấu `
 | CSV đơn giản | `BufferedReader` + `split()` |
 | CSV chuẩn | OpenCSV / Apache Commons CSV |
 
----
+
 
 # Tổng kết
 
